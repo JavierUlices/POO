@@ -37,11 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var readline = require("node:readline/promises");
+var node_process_1 = require("node:process");
 var Car = /** @class */ (function () {
-    function Car(color, model) {
+    function Car(color, model, year) {
         this._year = 0;
         this.color = color;
         this.model = model;
+        this.year = year;
     }
     Object.defineProperty(Car.prototype, "year", {
         get: function () {
@@ -59,25 +61,42 @@ var Car = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Car.prototype.displayInfo = function () {
+        console.log("Car Info: Color - ".concat(this.color, ", Model - ").concat(this.model, ", Year - ").concat(this.year));
+    };
     return Car;
 }());
+exports.default = Car;
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var rl, color, model, year;
+        var rl, color, model, year, car_1, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-                    return [4 /*yield*/, rl.question("Ingrese el color del auto: ")];
+                    rl = readline.createInterface({ input: node_process_1.stdin, output: node_process_1.stdout });
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 5, 6, 7]);
+                    return [4 /*yield*/, rl.question("Ingrese el color del auto: ")];
+                case 2:
                     color = _a.sent();
                     return [4 /*yield*/, rl.question("Ingrese el modelo del auto: ")];
-                case 2:
+                case 3:
                     model = _a.sent();
                     return [4 /*yield*/, rl.question("Ingrese el año del auto: ")];
-                case 3:
+                case 4:
                     year = _a.sent();
-                    return [2 /*return*/];
+                    car_1 = new Car(color, model, parseInt(year));
+                    car_1.displayInfo();
+                    return [3 /*break*/, 7];
+                case 5:
+                    error_1 = _a.sent();
+                    console.error(error_1);
+                    return [3 /*break*/, 7];
+                case 6:
+                    rl.close();
+                    return [7 /*endfinally*/];
+                case 7: return [2 /*return*/];
             }
         });
     });

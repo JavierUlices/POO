@@ -1,8 +1,9 @@
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
+import car  from './car';
 
 
-class Car {
+export default class Car {
     public color: string;
     public model: string;
     private _year: number = 0;
@@ -10,7 +11,7 @@ class Car {
     constructor(color: string, model: string, year: number) {
         this.color = color;
         this.model = model;
-        this.year = year; // Initialize the year using the setter
+        this.year = year; 
     }
 
     public get year(): number {
@@ -32,9 +33,6 @@ class Car {
         console.log(`Car Info: Color - ${this.color}, Model - ${this.model}, Year - ${this.year}`);
     }
 }
-import * as readline from 'node:readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
-import car from "./car"
 
 async function main() { /// async
 
@@ -45,7 +43,7 @@ async function main() { /// async
         const model = await rl.question("Ingrese el modelo del auto: "); 
         const year = await rl.question("Ingrese el año del auto: "); 
         
-        const car = new Car(color, model, parseInt(year)); // Pass year to the constructor
+        const car = new Car(color, model, parseInt(year));  
         car.displayInfo();
     } catch (error) {
         console.error(error);
