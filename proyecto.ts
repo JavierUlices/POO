@@ -1,17 +1,20 @@
-class Person {
-    private _age: number = 0;  // Initialize with 0
+//EJEMPLO DE GETTERS Y SETTERS 
 
-    public get age(): number {  
+class Person {
+    private _age: number = 0;
+
+    public get age(): number {
         return this._age;
     }
 
     public set age(value: number) {
-        if (value < 0) {  
-            throw new Error("La edad debe ser un número positivo.");
+        if (value <= 0 || !Number.isFinite(value)) {
+            throw new Error('La edad debe ser un número positivo y finito');
         }
-        this._age = value;  
+        this._age = value;
     }
 }
 
 const person = new Person();
-person.age = 9;  // This will not throw an error
+person.age = 10; // Asigna correctamente el valor
+console.log(person.age); // Imprime: 10
