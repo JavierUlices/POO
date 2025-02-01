@@ -1,4 +1,4 @@
-import Figure from './figure'
+import Figure from "./figure";
 
 export default class Triangle extends Figure {
     constructor(base: number, height: number) {
@@ -9,5 +9,3 @@ export default class Triangle extends Figure {
         return (this.base * this.height) / 2;
     }
 }
-
-// esto tengo que importarlo a un tercer archivo.

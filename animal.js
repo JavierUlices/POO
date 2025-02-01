@@ -1,4 +1,3 @@
-// Conpartiendo atributos y metodos por medio de dos clases
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -18,11 +17,13 @@ var Animal = /** @class */ (function () {
     function Animal(color) {
         this.color = color;
     }
+    Animal.prototype.fly = function () {
+    };
     Animal.prototype.run = function () {
-        console.log("El animal esta corriendo");
+        console.log('El animal esta corriendo');
     };
     Animal.prototype.eat = function () {
-        console.log("El animal esta comiendo");
+        console.log('El animal esta comiendo');
     };
     return Animal;
 }());
@@ -34,7 +35,7 @@ var Dog = /** @class */ (function (_super) {
         return _this;
     }
     Dog.prototype.run = function (name) {
-        if (name = undefined) {
+        if (name === undefined) {
             _super.prototype.run.call(this);
         }
         else {
@@ -44,5 +45,6 @@ var Dog = /** @class */ (function (_super) {
     return Dog;
 }(Animal));
 var dog = new Dog('negro', 'pastor aleman');
-dog.run('Firulais'); // Output: El animal esta corriendo
+dog.run('Firulais');
 dog.eat();
+dog.fly();
