@@ -1,7 +1,3 @@
- 
-
-
-
 export default class Car {
     public color: string;
     public model: string;
