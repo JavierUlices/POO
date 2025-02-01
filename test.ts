@@ -17,7 +17,7 @@ class Person {
         console.log(`Hola soy ${this.name} tengo ${this.age} y estudio ${this.correr}`);  
     }
 
-    // Removed the duplicate run method
+     
 }
 
 const person = new Person('Juan Perez', 20, 'software');

@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "@types/node": "^22.12.0"
-  }
+  },
+  "name": "poo-3",
+  "version": "1.0.0",
+  "main": "car.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
