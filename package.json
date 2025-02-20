@@ -1,11 +1,14 @@
 {
   "dependencies": {
-    "@types/node": "^22.12.0"
+    "@types/node": "^22.12.0",
+    "readline-sync": "^1.4.10"
   },
   "name": "poo-3",
   "version": "1.0.0",
   "main": "car.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
